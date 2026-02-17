@@ -70,18 +70,18 @@ GRANT DBA TO kenny_plsqlauca_28833;
 ```
 
 ### Verification
-PDB status shows READ WRITE
++ PDB status shows READ WRITE
 
-User kenny_plsqlauca_28833 successfully created
++ User kenny_plsqlauca_28833 successfully created
 
-User granted DBA privileges
++ User granted DBA privileges
 
-PDB visible when running SHOW PDBS
++ PDB visible when running SHOW PDBS
 
 ### Screenshots
-screenshots/task1_pdb_creation.jpg
++ screenshots/task1_pdb_creation.jpg
 
-screenshots/task1_user_grant.jpg
++ screenshots/task1_user_grant.jpg
 
 ## Task 2: Temporary PDB Creation and Deletion
 ### Temporary PDB Details
@@ -121,23 +121,25 @@ SHOW PDB;
 
 + PDB was successfully dropped
 
-* Datafiles were completely removed
++ Datafiles were completely removed
 
-* PDB no longer appears when running SHOW PDBS
++ PDB no longer appears when running SHOW PDBS
 
 ### Error Encountered
-ORA-65040: Attempted to create a PDB while inside another PDB
++ ORA-65040: Attempted to create a PDB while inside another PDB
 
 ### Resolution
-ALTER SESSION SET CONTAINER = CDB$ROOT;
++ ALTER SESSION SET CONTAINER = CDB$ROOT;
 
 ### Screenshots
-screenshots/task2_temp_pdb_create.jpg
++ screenshots/task2_temp_pdb_create.jpg
 
-screenshots/task2_temp_pdb_delete.jpg
++ screenshots/task2_temp_pdb_delete.jpg
 
 ## Task 3: Oracle Enterprise Manager (OEM) Configuration
 SQL Commands Executed
+
+```sql
 ALTER SESSION SET CONTAINER = ke_pdb_28833;
 
 SELECT dbms_xdb_config.gethttpsport() FROM dual;
@@ -145,36 +147,40 @@ SELECT dbms_xdb_config.gethttpsport() FROM dual;
 EXEC DBMS_XDB_CONFIG.SETHTTPSPORT(5501);
 
 SELECT dbms_xdb_config.gethttpsport() FROM dual;
+```
 
 ### Verification
-HTTPS port changed from 0 to 5501
++ HTTPS port changed from 0 to 5501
 
-OEM accessible via browser
++ OEM accessible via browser
 
-Database and PDB visible on the OEM dashboard
++ Database and PDB visible on the OEM dashboard
 
-Access Details
-URL: https://localhost:5501/em
+### Access Details
++ URL: https://localhost:5501/em
 
-Database: XE / KE_PDB_28833
++ Database: XE / KE_PDB_28833
 
-Version: 21.3.0.0.0 Express Edition
++ Version: 21.3.0.0.0 Express Edition
 
 ### Screenshots
-screenshots/task3_oem_config.jpg
++ screenshots/task3_oem_config.jpg
 
-screenshots/task3_oem_dashboard1.jpg
++ screenshots/task3_oem_dashboard1.jpg
 
-screenshots/task3_oem_dashboard2.jpg
++ screenshots/task3_oem_dashboard2.jpg
 
 ### Issues Encountered and Solutions
-Issue	Solution
-ORA-65040	Switched to CDB$ROOT
-ORA-65020	Verified PDB state before dropping
-OEM HTTPS port returned 0	Enabled port using DBMS_XDB_CONFIG.SETHTTPSPORT(5501)
-File path errors	Corrected directory formatting
+
+| Issue | Solution |
+|-------|----------|
+| ORA-65040 | Switched to CDB$ROOT |
+| ORA-65020 | Verified PDB state before dropping |
+| OEM HTTPS port returned 0 | Enabled port using DBMS_XDB_CONFIG.SETHTTPSPORT(5501) |
+| File path errors | Corrected directory formatting |
 
 ### Repository Structure
+```
 oracle_pdb_ass_II_28833_kenny/
 │
 ├── README.md
@@ -187,3 +193,4 @@ oracle_pdb_ass_II_28833_kenny/
     ├── task3_oem_config.jpg
     ├── task3_oem_dashboard1.jpg
     └── task3_oem_dashboard2.jpg
+```
