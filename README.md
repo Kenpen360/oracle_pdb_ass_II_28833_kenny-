@@ -67,7 +67,9 @@ ALTER PLUGGABLE DATABASE ke_pdb_28833 OPEN;
 
 ALTER SESSION SET CONTAINER = ke_pdb_28833;
 GRANT DBA TO kenny_plsqlauca_28833;
-Verification
+```
+
+### Verification
 PDB status shows READ WRITE
 
 User kenny_plsqlauca_28833 successfully created
@@ -76,23 +78,26 @@ User granted DBA privileges
 
 PDB visible when running SHOW PDBS
 
-Screenshots
+### Screenshots
 screenshots/task1_pdb_creation.jpg
 
 screenshots/task1_user_grant.jpg
 
-Task 2: Temporary PDB Creation and Deletion
-Temporary PDB Details
-PDB Name: ke_to_delete_pdb_28833
+## Task 2: Temporary PDB Creation and Deletion
+### Temporary PDB Details
 
-Admin User: temp_admin
+**PDB Name:** `ke_to_delete_pdb_28833`
 
-Password: temp123
+**Admin User:** `temp_admin`
 
-Datafile Location:
-C:\APP\ORADATA\XE\KE_TO_DELETE_PDB_28833\
+**Password:** `temp123`
 
-SQL Commands Executed
+**Datafile Location:**
+`C:\APP\ORADATA\XE\KE_TO_DELETE_PDB_28833\`
+
+### SQL Commands Executed
+
+```sql
 ALTER SESSION SET CONTAINER = CDB$ROOT;
 
 CREATE PLUGGABLE DATABASE ke_to_delete_pdb_28833
@@ -109,26 +114,29 @@ ALTER PLUGGABLE DATABASE ke_to_delete_pdb_28833 CLOSE;
 DROP PLUGGABLE DATABASE ke_to_delete_pdb_28833 INCLUDING DATAFILES;
 
 SHOW PDB;
-Verification
-Temporary PDB appeared in the PDB list
+```
 
-PDB was successfully dropped
+### Verification
+* Temporary PDB appeared in the PDB list
 
-Datafiles were completely removed
+* PDB was successfully dropped
 
-PDB no longer appears when running SHOW PDBS
+* Datafiles were completely removed
 
-Error Encountered
+* PDB no longer appears when running SHOW PDBS
+
+### Error Encountered
 ORA-65040: Attempted to create a PDB while inside another PDB
 
-Resolution
+### Resolution
 ALTER SESSION SET CONTAINER = CDB$ROOT;
-Screenshots
+
+### Screenshots
 screenshots/task2_temp_pdb_create.jpg
 
 screenshots/task2_temp_pdb_delete.jpg
 
-Task 3: Oracle Enterprise Manager (OEM) Configuration
+## Task 3: Oracle Enterprise Manager (OEM) Configuration
 SQL Commands Executed
 ALTER SESSION SET CONTAINER = ke_pdb_28833;
 
@@ -137,7 +145,8 @@ SELECT dbms_xdb_config.gethttpsport() FROM dual;
 EXEC DBMS_XDB_CONFIG.SETHTTPSPORT(5501);
 
 SELECT dbms_xdb_config.gethttpsport() FROM dual;
-Verification
+
+### Verification
 HTTPS port changed from 0 to 5501
 
 OEM accessible via browser
@@ -151,20 +160,21 @@ Database: XE / KE_PDB_28833
 
 Version: 21.3.0.0.0 Express Edition
 
-Screenshots
+### Screenshots
 screenshots/task3_oem_config.jpg
 
 screenshots/task3_oem_dashboard1.jpg
 
 screenshots/task3_oem_dashboard2.jpg
 
-Issues Encountered and Solutions
+### Issues Encountered and Solutions
 Issue	Solution
 ORA-65040	Switched to CDB$ROOT
 ORA-65020	Verified PDB state before dropping
 OEM HTTPS port returned 0	Enabled port using DBMS_XDB_CONFIG.SETHTTPSPORT(5501)
 File path errors	Corrected directory formatting
-Repository Structure
+
+### Repository Structure
 oracle_pdb_ass_II_28833_kenny/
 │
 ├── README.md
