@@ -117,9 +117,9 @@ SHOW PDB;
 ```
 
 ### Verification
-* Temporary PDB appeared in the PDB list
++ Temporary PDB appeared in the PDB list
 
-* PDB was successfully dropped
++ PDB was successfully dropped
 
 * Datafiles were completely removed
 
