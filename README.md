@@ -194,3 +194,13 @@ oracle_pdb_ass_II_28833_kenny/
     ├── task3_oem_dashboard1.jpg
     └── task3_oem_dashboard2.jpg
 ```
+## REFERENCES
+
+- INSY 8311 Course Materials - Eric Maniraguha
+- Deepseek AI for a readme.md file
+
+---
+
+## INTEGRITY STATEMENT
+
+I, **Kenny (28833)**, confirm that this assignment is my own individual work. All commands were executed by me, screenshots are original and unmodified, and no AI tools or unauthorized assistance were used.
