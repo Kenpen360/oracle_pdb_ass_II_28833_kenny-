@@ -80,6 +80,7 @@ GRANT DBA TO kenny_plsqlauca_28833;
 
 ### Screenshots
 + screenshots/task1_pdb_creation.jpg
++ https://screenshots/task1_pdb_creation.jpg
 
 + screenshots/task1_user_grant.jpg
 
