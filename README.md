@@ -79,9 +79,9 @@ GRANT DBA TO kenny_plsqlauca_28833;
 + PDB visible when running SHOW PDBS
 
 ### Screenshots
-+ screenshots/task1_pdb_creation.jpg
++ ![PDB Creation](screenshots/task1_pdb_creation.jpg)
 
-+ screenshots/task1_user_grant.jpg
++ ![User Grant](screenshots/task1_user_grant.jpg)
 
 ## Task 2: Temporary PDB Creation and Deletion
 ### Temporary PDB Details
@@ -132,9 +132,9 @@ SHOW PDB;
 + ALTER SESSION SET CONTAINER = CDB$ROOT;
 
 ### Screenshots
-+ screenshots/task2_temp_pdb_create.jpg
++ ![Temp PDB Create](screenshots/task2_temp_pdb_create.jpg)
 
-+ screenshots/task2_temp_pdb_delete.jpg
++ ![Temp PDB Delete](screenshots/task2_temp_pdb_delete.jpg)
 
 ## Task 3: Oracle Enterprise Manager (OEM) Configuration
 SQL Commands Executed
@@ -164,11 +164,11 @@ SELECT dbms_xdb_config.gethttpsport() FROM dual;
 + Version: 21.3.0.0.0 Express Edition
 
 ### Screenshots
-+ screenshots/task3_oem_config.jpg
++ ![OEM Config](screenshots/task3_oem_config.jpg)
 
-+ screenshots/task3_oem_dashboard1.jpg
++ ![OEM Dashboard 1](screenshots/task3_oem_dashboard1.jpg)
 
-+ screenshots/task3_oem_dashboard2.jpg
++ ![OEM Dashboard 2](screenshots/task3_oem_dashboard2.jpg)
 
 ### Issues Encountered and Solutions
 
