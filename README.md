@@ -86,13 +86,13 @@ GRANT DBA TO kenny_plsqlauca_28833;
 ## Task 2: Temporary PDB Creation and Deletion
 ### Temporary PDB Details
 
-**PDB Name:** `ke_to_delete_pdb_28833`
+- **PDB Name:** `ke_to_delete_pdb_28833`
 
-**Admin User:** `temp_admin`
+- **Admin User:** `temp_admin`
 
-**Password:** `temp123`
+- **Password:** `temp123`
 
-**Datafile Location:**
+- **Datafile Location:**
 `C:\APP\ORADATA\XE\KE_TO_DELETE_PDB_28833\`
 
 ### SQL Commands Executed
